@@ -55,3 +55,18 @@ def view_inventory():
     print("\n===== DANH SÁCH SẢN PHẨM TRONG KHO =====")
     for i, product in enumerate(products, start=1):
         print(f"{i}. Tên: {product['name']} | Giá: {product['price']} VND | Số lượng: {product['qty']}")
+
+# Danh sách toàn cục lưu trữ sản phẩm
+products = []
+
+def check_low_stock():
+    print("\n===== SẢN PHẨM SẮP HẾT HÀNG =====")
+    found = False  # biến đánh dấu xem có sản phẩm nào thiếu không
+
+    for product in products:
+        if product['qty'] < 5:
+            print(f"- {product['name']} | Số lượng còn: {product['qty']}")
+            found = True
+
+    if not found:
+        print(">>> Tất cả sản phẩm đều còn đủ hàng!")
