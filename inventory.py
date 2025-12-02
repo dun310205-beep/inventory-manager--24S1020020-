@@ -44,3 +44,14 @@ def add_product(name, price, quantity):
     products.append(product)
     print(f">>> Đã thêm sản phẩm: {name}")
 
+# Danh sách toàn cục lưu trữ sản phẩm
+products = []
+
+def view_inventory():
+    if len(products) == 0:
+        print(">>> Kho hiện đang trống. Chưa có sản phẩm nào!")
+        return
+    
+    print("\n===== DANH SÁCH SẢN PHẨM TRONG KHO =====")
+    for i, product in enumerate(products, start=1):
+        print(f"{i}. Tên: {product['name']} | Giá: {product['price']} VND | Số lượng: {product['qty']}")
