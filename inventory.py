@@ -31,3 +31,16 @@ def main():
 
 # Gọi hàm main để chạy chương trình
 main()
+
+# Danh sách toàn cục lưu trữ sản phẩm
+products = []
+
+def add_product(name, price, quantity):
+    product = {
+        'name': name,
+        'price': price,
+        'qty': quantity
+    }
+    products.append(product)
+    print(f">>> Đã thêm sản phẩm: {name}")
+
